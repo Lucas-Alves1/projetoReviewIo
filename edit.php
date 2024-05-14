@@ -22,3 +22,7 @@ $stmt = null;
 $pdo = null;
 
 ?>
+
+<button class="btn btn-primary">
+    <a href="index.php">Voltar</a>
+</button>
