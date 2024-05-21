@@ -1,14 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 html {
+  background: linear-gradient(to bottom right, #14181c, rgba(243, 125, 66, 0.0666666667)) no-repeat;
   color-scheme: dark;
 }
 
 body {
   margin: 0;
   height: 100%;
+  background-color: inherit;
+  color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+}
+
+h1, h2, .title {
+  font-family: "DM Serif Display", serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1;
+}
+
+h2 {
+  color: #f37d42;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
 }
 
 .main {
   padding: 80px 20px;
+}
+.main > .container {
+  max-width: 1200px;
+  padding: 60px 32px;
+  border-radius: 20px 0 20px 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.main form .form-control {
+  border: 1px solid transparent;
+  border-radius: 8px 0 8px 0;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  min-height: 58px;
+}
+.main form .form-control, .main form .form-control::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: inherit;
+}
+.main form .form-control[type=file] {
+  min-height: auto;
+}
+.main form .form-control[type=number] {
+  position: relative;
+  isolation: isolate;
+}
+.main form .form-control[type=number]::after {
+  content: "/100";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  padding: inherit;
+  color: inherit;
+}
+.main form .form-control:focus {
+  box-shadow: none;
+}
+.main form textarea.form-control {
+  resize: none;
+  min-height: 200px;
+  padding-block: 20px;
+}
+.main form .form-label::after {
+  color: #f5f5f5;
+  background-color: red;
+}
+.main form .form-label span {
+  color: #f37d42;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

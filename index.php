@@ -17,27 +17,27 @@
             <h2>Avalie suas obras favoritas!</h2>
                 
             <form action="processa_upload.php" method="post" enctype="multipart/form-data">
-                <div class="form-floating mt-3">
-                    <input class="form-control" type="text" name="name" id="name" placeholder="nome do jogo" required>
-                    <label class="form-label" for="name">Nome do Jogo:</label>
+                <div class="mt-3">
+                    <label class="form-label" for="name">Nome do Jogo<span>*</span>:</label>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Digite o nome do jogo" required>
                 </div>
-                <div class="form-floating mt-3">
-                    <input class="form-control" type="number" name="aval" id="aval" placeholder="?/100" required>
-                    <label class="form-label" for="aval">Avaliação:</label>
+                <div class="mt-3">
+                    <label class="form-label" for="aval" min="0" max="100" maxlength="3">Avaliação<span>*</span>:</label>
+                    <input class="form-control" type="number" name="aval" id="aval" placeholder="Dê uma nota de 1 à 100!" required>
                 </div>
-                <div class="form-floating mt-3">
-                    <input class="form-control" type="date" name="data" id="data" placeholder="data">
-                    <label class="form-label" for="data">Data:</label>
+                <div class="mt-3">
+                    <label class="form-label" for="data">Data<span>*</span>:</label>
+                    <input class="form-control" type="date" name="data" id="data" placeholder="data" required>
                 </div>
-                <div class="form-floating mt-3">
-                    <input class="form-control" type="file" name="img" id="img" placeholder="Selecione a imagem" required>
-                    <label class="form-label" for="img">Imagem:</label>
+                <div class="mt-3">
+                    <label class="form-label" for="img">Imagem<span>*</span>:</label>
+                    <input class="form-control form-control-lg" type="file" name="img" id="img" placeholder="Selecione a imagem" required>
                 </div>
-                <div class="form-floating mt-3">
-                    <textarea class="form-control" name="desc" id="desc"></textarea>
-                    <label class="form-label" for="desc" placeholder="Deixe sua avaliação">Descrição:</label>
+                <div class="mt-3">
+                    <label class="form-label" for="desc" placeholder="Deixe sua avaliação">Opinião:</label>
+                    <textarea class="form-control" name="desc" id="desc" placeholder="Suas melhores palavras..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary mt-4">Cadastrar</button>
+                <button type="submit" class="btn btn-primary mt-4">Salvar</button>
             </form>
     
             <a href="edit.php" class="mt-3">Meus jogos</a>

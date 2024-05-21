@@ -8,17 +8,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $aval = $_POST['aval'];
     $data = $_POST['data'];
 
-    // Verificar se um arquivo foi enviado
     if (isset($_FILES['img']) && $_FILES['img']['error'] == 0) {
-        $uploadDir = 'uploads/'; // Diretório onde as imagens serão salvas
+        $uploadDir = 'uploads/'; // diretório das imgs
         $uploadFile = $uploadDir . basename($_FILES['img']['name']);
 
-        // Verifica se o diretório de upload existe, caso contrário, cria
+        // cria 
         if (!file_exists($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
 
-        // Move o arquivo enviado para o diretório de upload
+        // move o arquivo
         if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadFile)) {
             $imgPath = $uploadFile;
             $stmt = $pdo->prepare("INSERT INTO GAME (name, desc, aval, img, data) VALUES (?, ?, ?, ?, ?)");

@@ -9,7 +9,7 @@ $query = "CREATE TABLE IF NOT EXISTS GAME(
     desc TEXT,
     aval INTEGER NOT NULL,
     img TEXT,
-    data DATE
+    data DATE NOT NULL
 )";
 
 $pdo->exec($query); // o exec executa qualquer comando SQL na variável $query

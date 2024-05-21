@@ -14,7 +14,8 @@ while ($result = $stmt->fetch()) {
     echo 'Avaliação: ' . $result['aval'] . '<br>';
     echo 'Imagem: <img src="' . $result['img'] . '" alt="Imagem do jogo" style="max-width: 100px;"><br>';
     echo 'Data: ' . $result['data'] . '<br>';
-    echo '<a href="edit_form.php?id=' . $result['id_game'] . '">Editar</a><br><br>';
+    echo '<a href="edit_form.php?id=' . $result['id_game'] . '">Editar</a><br>';
+    echo '<a href="#" onclick="confirmDelete(' . $result['id_game'] . ')">Excluir</a><br><br>';
 }
 
 $result = null;
@@ -22,6 +23,14 @@ $stmt = null;
 $pdo = null;
 
 ?>
+
+<script>
+function confirmDelete(id) {
+    if (confirm('Tem certeza que deseja excluir esse cadastro?')) {
+        window.location.href = 'delete.php?id=' + id;
+    }
+}
+</script>
 
 <button class="btn btn-primary">
     <a href="index.php">Voltar</a>

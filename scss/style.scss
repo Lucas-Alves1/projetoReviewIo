@@ -1,10 +1,99 @@
+// sass --watch scss/style.scss:css/style.css
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
+  background: linear-gradient(to bottom right, #14181c, #f37d4211) no-repeat;
   color-scheme: dark;
 }
 body {
   margin: 0;
   height: 100%;
+  background-color: inherit;
+  color: #f5f5f5;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
 }
+// utility classes ---------------
+h1, h2, .title {
+  font-family: "DM Serif Display", serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: 64px;
+  line-height: 1;
+}
+h2 {
+  color: #f37d42;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 400;
+}
+
+// page index --------------------
 .main {
   padding: 80px 20px;
+
+  & > .container {
+    max-width: 1200px;
+    padding: 60px 32px;
+    border-radius: 20px 0 20px 0;
+    background: rgba(0,0,0,0.5)
+  }
+  form {
+    .form-control {
+      border: 1px solid transparent;
+      border-radius: 8px 0 8px 0;
+      background-color: hsla(0,0%,100%,.3);
+      min-height: 58px;
+
+      &, &::placeholder {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.25rem;
+        color: inherit;
+      }
+      &[type="file"] {
+        min-height: auto;
+      }
+      &[type="number"] {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+          content: "/100";
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          
+          padding: inherit;
+          color: inherit;
+        }
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    textarea.form-control {
+      resize: none;
+      min-height: 200px;
+      padding-block: 20px;
+      
+    }
+    .form-label {
+      &::after {
+        color: #f5f5f5;
+        background-color: red;
+      }
+      span { 
+        color: #f37d42;
+        font-weight: bold;
+      }
+    }
+  }
 }
+
+// page edit --------------------
+.edit {}
