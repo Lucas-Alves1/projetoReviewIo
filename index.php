@@ -12,35 +12,44 @@
 </head>
 <body>
     <main class="main">
-        <div class="container">            
-            <h1>Review.Io</h1>
-            <h2>Avalie suas obras favoritas!</h2>
-                
-            <form action="processa_upload.php" method="post" enctype="multipart/form-data">
-                <div class="mt-3">
-                    <label class="form-label" for="name">Nome do Jogo<span>*</span>:</label>
-                    <input class="form-control" type="text" name="name" id="name" placeholder="Digite o nome do jogo" required>
+        <div class="container">
+            <article class="main--text">
+                <div>
+                    <h1>Review.Io</h1>
+                    <h2>Avalie suas obras favoritas!</h2>
                 </div>
-                <div class="mt-3">
-                    <label class="form-label" for="aval" min="0" max="100" maxlength="3">Avaliação<span>*</span>:</label>
-                    <input class="form-control" type="number" name="aval" id="aval" placeholder="Dê uma nota de 1 à 100!" required>
+                <div>
+                    <a href="edit.php" class="button btn-secondary">Meus jogos</a>
                 </div>
-                <div class="mt-3">
-                    <label class="form-label" for="data">Data<span>*</span>:</label>
-                    <input class="form-control" type="date" name="data" id="data" placeholder="data" required>
-                </div>
-                <div class="mt-3">
-                    <label class="form-label" for="img">Imagem<span>*</span>:</label>
-                    <input class="form-control form-control-lg" type="file" name="img" id="img" placeholder="Selecione a imagem" required>
-                </div>
-                <div class="mt-3">
-                    <label class="form-label" for="desc" placeholder="Deixe sua avaliação">Opinião:</label>
-                    <textarea class="form-control" name="desc" id="desc" placeholder="Suas melhores palavras..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary mt-4">Salvar</button>
-            </form>
-    
-            <a href="edit.php" class="mt-3">Meus jogos</a>
+            </article>
+
+            <article class="main--form">
+                <form action="processa_upload.php" method="post" enctype="multipart/form-data">
+                    <div class="mt-3">
+                        <label class="form-label" for="name">Nome do Jogo<span>*</span>:</label>
+                        <input class="form-control" type="text" name="name" id="name" placeholder="Digite o nome do jogo" required>
+                    </div>
+                    <div class="mt-3">
+                        <label class="form-label" for="aval" min="0" max="100" maxlength="3">Avaliação<span>*</span>:</label>
+                        <input class="form-control" type="number" name="aval" id="aval" placeholder="Dê uma nota de 1 à 100!" required>
+                    </div>
+                    <div class="mt-3">
+                        <label class="form-label" for="data">Data<span>*</span>:</label>
+                        <input class="form-control" type="date" name="data" id="data" placeholder="data" required>
+                    </div>
+                    <div class="mt-3">
+                        <label class="form-label" for="img">Imagem<span>*</span>:</label>
+                        <input class="form-control form-control-lg" type="file" name="img" id="img" placeholder="Selecione a imagem" required>
+                    </div>
+                    <div class="mt-3">
+                        <label class="form-label" for="desc" placeholder="Deixe sua avaliação">Opinião:</label>
+                        <textarea class="form-control" name="desc" id="desc" placeholder="Suas melhores palavras..."></textarea>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="button btn-primary mt-4">Salvar</button>
+                    </div>
+                </form>
+            </article>
         </div>
     </main>
 </body>

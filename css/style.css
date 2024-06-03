@@ -14,6 +14,23 @@ body {
   min-height: 100vh;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f37d42;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(243, 125, 66, 0.8666666667);
+}
+
 h1, h2, .title {
   font-family: "DM Serif Display", serif;
   font-weight: 700;
@@ -32,35 +49,84 @@ h2 {
   font-weight: 400;
 }
 
+.button {
+  display: grid;
+  place-items: center;
+  padding: 12px 20px;
+  min-height: 48px;
+  min-width: 160px;
+  font-family: inherit;
+  border-radius: 20px 0 20px 0;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  translate: 0 -3px;
+}
+.button.btn-primary {
+  color: #1e1e1e;
+  background: #f37d42;
+  border: 2px solid transparent;
+}
+.button.btn-primary:hover {
+  background: transparent;
+  border-color: #f5f5f5;
+  color: #f5f5f5;
+}
+.button.btn-secondary {
+  color: #f5f5f5;
+  background: transparent;
+  border: 2px solid #f5f5f5;
+}
+.button.btn-secondary:hover {
+  background: #f37d42;
+  border-color: transparent;
+  color: #1e1e1e;
+}
+
 .main {
   padding: 80px 20px;
 }
 .main > .container {
-  max-width: 1200px;
-  padding: 60px 32px;
+  max-width: 800px;
+  padding: 60px 44px;
   border-radius: 20px 0 20px 0;
   background: rgba(0, 0, 0, 0.5);
 }
-.main form .form-control {
+.main--text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 44px;
+}
+.main--text > div {
+  width: fit-content;
+}
+.main--form form .form-control {
   border: 1px solid transparent;
   border-radius: 8px 0 8px 0;
   background-color: hsla(0, 0%, 100%, 0.3);
   min-height: 58px;
 }
-.main form .form-control, .main form .form-control::placeholder {
+.main--form form .form-control, .main--form form .form-control::placeholder {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25rem;
   color: inherit;
 }
-.main form .form-control[type=file] {
+.main--form form .form-control[type=file] {
   min-height: auto;
 }
-.main form .form-control[type=number] {
+.main--form form .form-control[type=number] {
   position: relative;
   isolation: isolate;
 }
-.main form .form-control[type=number]::after {
+.main--form form .form-control[type=number]::after {
   content: "/100";
   position: absolute;
   inset: 0;
@@ -68,19 +134,19 @@ h2 {
   padding: inherit;
   color: inherit;
 }
-.main form .form-control:focus {
+.main--form form .form-control:focus {
   box-shadow: none;
 }
-.main form textarea.form-control {
+.main--form form textarea.form-control {
   resize: none;
   min-height: 200px;
   padding-block: 20px;
 }
-.main form .form-label::after {
+.main--form form .form-label::after {
   color: #f5f5f5;
   background-color: red;
 }
-.main form .form-label span {
+.main--form form .form-label span {
   color: #f37d42;
   font-weight: bold;
 }
