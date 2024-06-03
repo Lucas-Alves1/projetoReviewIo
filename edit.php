@@ -6,21 +6,6 @@ $query = "SELECT * FROM GAME";
 $stmt = $pdo->prepare($query);
 $stmt->execute();
 
-while ($result = $stmt->fetch()) {
-    echo 'ID: ' . $result['id_game'] . '<br>';
-    echo 'Nome: ' . $result['name'] . '<br>';
-    echo 'Descrição: ' . $result['desc'] . '<br>';
-    echo 'Avaliação: ' . $result['aval'] . '<br>';
-    echo 'Imagem: <img src="' . $result['img'] . '" alt="Imagem do jogo" style="max-width: 100px;"><br>';
-    echo 'Data: ' . $result['data'] . '<br>';
-    echo '<a href="edit_form.php?id=' . $result['id_game'] . '">Editar</a><br>';
-    echo '<a href="#" onclick="confirmDelete(' . $result['id_game'] . ')">Excluir</a><br><br>';
-}
-
-$result = null;
-$stmt = null;
-$pdo = null;
-
 ?>
 
 <!DOCTYPE html>
@@ -29,18 +14,60 @@ $pdo = null;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- ICONS -->
+    <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <title>Minhas avaliações - Review.Io</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <main class="list">
         <div class="container">
-            <h1>Meus Jogos</h1>
+            <article class="list--text">
+                <h1>Meus Jogos</h1>
+                <p>Confira abaixo todos as suas avaliações... <br>até o momento</p>
+            </article>
+            <article class="list--wrapper">
+                <?php
+                    while ($result = $stmt->fetch()) {
+                    echo '<div class="list--item">';
+                        echo '<img src="' . $result['img'] . '" alt="Imagem do jogo">';
+                        
+                        echo '<div class="info">';
+                            echo '<h3>' . $result['name'] . '</h3>';
+                            // 
+                            echo '<span>ID: ' . $result['id_game'] . '</span>';
+                            echo 'Avaliação: ' . $result['aval'] . '<br>';
+                            echo 'Data: ' . $result['data'] . '<br>';
+                            // 
+                            echo 'Descrição: ' . $result['desc'] . '<br>';
+                            // 
+                            echo '<div class="btns">';
+                                echo '<a class="button btn-secondary" href="edit_form.php?id=' . $result['id_game'] . '">
+                                    <ion-icon name="pencil"></ion-icon>
+                                </a>';
+                                echo '<a class="button btn-secondary" href="#" onclick="confirmDelete(' . $result['id_game'] . ')">
+                                    <ion-icon name="trash"></ion-icon>
+                                </a>';
+                            echo '</div>';
+                        // 
+                        echo '</div>';
+                    echo '</div>';
+                    }
+
+
+                    $result = null;
+                    $stmt = null;
+                    $pdo = null;
+                ?>
+            </article>
         </div>
     </main>
+
     
     <script>
         function confirmDelete(id) {

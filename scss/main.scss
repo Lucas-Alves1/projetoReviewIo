@@ -1,5 +1,10 @@
-// sass --watch scss/style.scss:css/style.css
+// pages
+@import 'pages/index';
+@import 'pages/list';
 
+// sass --watch scss/main.scss:css/main.css
+
+// general ------------
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -87,85 +92,4 @@ h2 {
       color: #1e1e1e;
     }
   }
-}
-
-// page index --------------------
-.main {
-  padding: 80px 20px;
-
-  & > .container {
-    max-width: 800px;
-    padding: 60px 44px;
-    border-radius: 20px 0 20px 0;
-    background: rgba(0,0,0,0.5)
-  }
-  &--text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 44px;
-
-    & > div {
-      width: fit-content;
-    }
-  }
-  &--form {
-    form {
-    .form-control {
-      border: 1px solid transparent;
-      border-radius: 8px 0 8px 0;
-      background-color: hsla(0,0%,100%,.3);
-      min-height: 58px;
-
-      &, &::placeholder {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.25rem;
-        color: inherit;
-      }
-      &[type="file"] {
-        min-height: auto;
-      }
-      &[type="number"] {
-        position: relative;
-        isolation: isolate;
-
-        &::after {
-          content: "/100";
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          
-          padding: inherit;
-          color: inherit;
-        }
-      }
-      &:focus {
-        box-shadow: none;
-      }
-    }
-    textarea.form-control {
-      resize: none;
-      min-height: 200px;
-      padding-block: 20px;
-      
-    }
-    .form-label {
-      &::after {
-        color: #f5f5f5;
-        background-color: red;
-      }
-      span { 
-        color: #f37d42;
-        font-weight: bold;
-      }
-    }
-  }
-  }
-}
-
-// page edit --------------------
-.list {
-  
 }
