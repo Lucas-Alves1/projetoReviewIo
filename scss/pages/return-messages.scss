@@ -1,0 +1,14 @@
+.return {
+  padding: 80px 20px;
+  text-align: center;
+
+  h1 {
+    font-size: 40px;
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+}

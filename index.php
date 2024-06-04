@@ -19,7 +19,7 @@
         <div class="container">
             <article class="main--text">
                 <div>
-                    <h1>Review.Io</h1>
+                    <h1>Review.io</h1>
                     <h2>Avalie suas obras favoritas!</h2>
                 </div>
                 <div>

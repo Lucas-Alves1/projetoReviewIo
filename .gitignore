@@ -1,3 +1,6 @@
+# files
+uploads/*
+
 # Composer
 composer.phar
 /vendor/

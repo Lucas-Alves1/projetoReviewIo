@@ -1,13 +1,16 @@
 // pages
 @import 'pages/index';
 @import 'pages/list';
+@import 'pages/edit-form';
+@import 'pages/return-messages';
 
 // sass --watch scss/main.scss:css/main.css
 
-// general ------------
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+// general ------------
 html {
   background: linear-gradient(to bottom right, #14181c, #f37d4211) no-repeat;
   color-scheme: dark;
@@ -36,7 +39,7 @@ body {
 
 // utility classes ---------------
 h1, h2, .title {
-  font-family: "DM Serif Display", serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
